@@ -205,3 +205,67 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ========================================
+# Custom additions for genomics project
+# ========================================
+
+# External tools (not your code)
+tools/
+
+# Singularity/Docker containers
+*.sif
+*.simg
+
+# Nextflow work directories (temporary pipeline files)
+work/
+.nextflow/
+.nextflow.log*
+
+# Genomic data files
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.vcf.idx
+*.bed
+*.bim
+*.fam
+*.pgen
+*.pvar
+*.psam
+*.bgen
+*.bgi
+
+# GWAS results (can be regenerated)
+*.txt.gz
+*.assoc*
+*.regenie
+*.SAIGE.results.txt
+*.gwas.saige.gz
+*.rda
+*.RData
+
+# GWAS per-chunk results (regenerable)
+*_results.txt
+*_results.txt.index
+*/hepatic_fat_chr*_chunk*
+
+# Large data directories
+data/
+raw_data/
+results/
+output/
+**/raw/
+
+# HPC job logs
+log/
+logs/
+*.err
+*.out
+*.log
+
+# Participant-level data (sensitive)
+*_covariates.csv
+saige_pheno_covars.txt
+sample_list.txt
+*sample_list*

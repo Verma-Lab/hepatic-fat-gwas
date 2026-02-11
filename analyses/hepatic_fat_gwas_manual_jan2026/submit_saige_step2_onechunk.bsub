@@ -1,0 +1,24 @@
+#!/bin/bash
+#BSUB -q epistasis_normal
+#BSUB -J saige_step2_onechunk
+#BSUB -o saige_step2_onechunk.%J.out
+#BSUB -e saige_step2_onechunk.%J.err
+#BSUB -n 1
+#BSUB -W 24:00
+#BSUB -M 16000
+#BSUB -R "rusage[mem=16000]"
+
+# load modules
+# -------------
+# always good to run a purge for the job
+module purge
+module load apptainer
+
+
+# set directory
+WDIR="/project/verma_shared/projects/Liver_IDPs/analyses/hepatic_fat_gwas_manual_jan2026"
+cd $WDIR 
+
+# run one chunk saige step 2
+bash run_saige_step2_onechunk.sh
+
