@@ -1,1 +1,0 @@
-/project/verma_shared/projects/Liver_IDPs/analyses/hepatic_fat_gwas_manual_jan2026/work/32/18f4c938dda861efa9dd5f53b3ea2c/GWAS_biofilter_positions_annotations.txt
