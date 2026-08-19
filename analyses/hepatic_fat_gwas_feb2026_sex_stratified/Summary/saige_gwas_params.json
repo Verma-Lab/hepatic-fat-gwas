@@ -54,8 +54,10 @@
     "inverse-normalize": "TRUE",
     "gene_location_file": "/app/NCBI.gene.loc",
     "cohort_list": [
-        "PMBB_ALL_M",
-        "PMBB_ALL_F"
+        "PMBB_AFR_F",
+        "PMBB_AFR_M",
+        "PMBB_EUR_F",
+        "PMBB_EUR_M"
     ],
     "sex_strat_cohort_list": [
         
