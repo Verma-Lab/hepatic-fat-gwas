@@ -245,6 +245,9 @@ work/
 *.rda
 *.RData
 
+# FUMA-prepped intermediate sumstats (too large for GitHub, kept on filesystem only)
+analyses/hepatic_fat_gwas_feb2026_sex_stratified/LeadSNPs/gwas_processed/*.gz
+
 # GWAS per-chunk results (regenerable)
 *_results.txt
 *_results.txt.index
