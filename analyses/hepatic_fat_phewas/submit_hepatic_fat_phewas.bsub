@@ -1,0 +1,17 @@
+#!/bin/bash
+#BSUB -q epistasis_normal
+#BSUB -J hepatic_fat_phewas
+#BSUB -o hepatic_fat_phewas.%J.out
+#BSUB -e hepatic_fat_phewas.%J.err
+#BSUB -n 1
+#BSUB -W 2:00
+#BSUB -M 8000
+#BSUB -R "rusage[mem=8000]"
+
+module purge
+module load R/4.4
+
+WDIR="/project/verma_shared/projects/Liver_IDPs/analyses/hepatic_fat_phewas"
+cd $WDIR
+
+Rscript run_hepatic_fat_phewas.R
