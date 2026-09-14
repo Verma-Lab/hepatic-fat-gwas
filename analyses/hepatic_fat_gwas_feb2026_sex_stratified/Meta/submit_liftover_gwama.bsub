@@ -1,0 +1,14 @@
+#!/bin/bash
+#BSUB -q epistasis_normal
+#BSUB -J liftover_gwama_meta
+#BSUB -o liftover_gwama_meta.%J.out
+#BSUB -e liftover_gwama_meta.%J.err
+#BSUB -n 1
+#BSUB -W 4:00
+#BSUB -M 4000
+#BSUB -R "rusage[mem=4000]"
+
+WDIR="/project/verma_shared/projects/Liver_IDPs/analyses/hepatic_fat_gwas_feb2026_sex_stratified/Meta"
+cd $WDIR
+
+/project/verma_shared/projects/Liver_IDPs/tools/pyliftover_env/bin/python liftover_gwama_hg38_to_hg19.py

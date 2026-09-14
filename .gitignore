@@ -245,6 +245,12 @@ work/
 *.rda
 *.RData
 
+# GWAMA meta-analysis intermediate outputs 
+analyses/hepatic_fat_gwas_feb2026_sex_stratified/Meta/*.gz
+
+# PheWAS occurrence table
+analyses/hepatic_fat_phewas/cohort_phecode12_occurrences.tsv
+
 # FUMA-prepped intermediate sumstats (too large for GitHub, kept on filesystem only)
 analyses/hepatic_fat_gwas_feb2026_sex_stratified/LeadSNPs/gwas_processed/*.gz
 
