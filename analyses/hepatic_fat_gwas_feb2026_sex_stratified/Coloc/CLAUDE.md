@@ -13,8 +13,10 @@ Originally developed locally at `/Users/agaro/Documents/PhD/meno_effects_liver/`
 
 (Scripts live flat at the top of this directory, not in a nested `scripts/` folder — matches how the rest of `hepatic_fat_gwas_feb2026_sex_stratified/` puts single scripts at the top level rather than nesting them.)
 
-## GTEx v8 tissues used (31, same eQTL set as the FUMA runs — see `../LeadSNPs/CLAUDE.md`)
-Adipose Subcutaneous, Adipose Visceral Omentum, Adrenal Gland, Cells EBV-transformed lymphocytes, Whole Blood, Artery Aorta, Artery Coronary, Artery Tibial, Brain Amygdala, Brain Anterior cingulate cortex BA24, Brain Caudate basal ganglia, Brain Cerebellar Hemisphere, Brain Cerebellum, Brain Cortex, Brain Frontal Cortex BA9, Brain Hippocampus, Brain Hypothalamus, Brain Nucleus accumbens basal ganglia, Brain Putamen basal ganglia, Brain Spinal cord cervical c-1, Brain Substantia nigra, Breast Mammary Tissue, Colon Sigmoid, Colon Transverse, Esophagus Gastroesophageal Junction, Esophagus Mucosa, Esophagus Muscularis, Heart Atrial Appendage, Heart Left Ventricle, Kidney Cortex, Liver
+## GTEx v8 tissues used
+Corrected 2026-09-04: this coloc analysis uses a curated 6-tissue set matched to metabolic relevance, **not** the full 31-tissue panel FUMA's built-in eQTL module uses (see `../LeadSNPs/CLAUDE.md`) — those are two separate things and shouldn't be conflated.
+
+Liver, Whole Blood, Adipose Subcutaneous, Adipose Visceral Omentum, Skeletal Muscle, Pancreas
 
 ## File index
 
