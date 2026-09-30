@@ -254,6 +254,9 @@ analyses/hepatic_fat_phewas/cohort_phecode12_occurrences.tsv
 # FUMA-prepped intermediate sumstats (too large for GitHub, kept on filesystem only)
 analyses/hepatic_fat_gwas_feb2026_sex_stratified/LeadSNPs/gwas_processed/*.gz
 
+# LDSC heritability analysis - private intermediate and munged sumstats
+analyses/ldsc_heritability/
+
 # GWAS per-chunk results (regenerable)
 *_results.txt
 *_results.txt.index
