@@ -283,4 +283,4 @@ sample_list.txt
 *sample_list*
 *.pkl
 phenotyping/qc_clipping/attenuation_sd_outlier_check/plausibility_flags.tsv
-
+phenotyping/qc_clipping/**/*.tsv
