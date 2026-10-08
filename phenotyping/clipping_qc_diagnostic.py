@@ -1,15 +1,10 @@
 """
-Interactive clipping/padding diagnostic for liver + spleen attenuation data.
-Checks whether attenuation_Minimum/Maximum show padding or saturation
-artifacts, across all phases, and saves a QC-filtered cache other scripts
-can load directly.
+Removes clipped liver/spleen attenuation values (CT brightness, in HU) from the
+IDP data. A clipped value is one stuck at the image's storage limit rather than
+real tissue. Saves the cleaned rows to idp_liver_spleen_clean.pkl.
 
-Split into "# %%" cells to run one step at a time.
-Cells 1-2 read the full IDP file ONCE and cache a liver/spleen-only subset.
-Cell 3 onward loads that cache later sessions should start there.
-Cell 10 applies the decided clipping filter and saves a CLEANED cache
-(idp_liver_spleen_clean.pkl) for other scripts (e.g. the native-vs-PV
-reliability check) to load without redoing this QC work.
+Run cell by cell ("# %%"): Cells 1-2 build the raw cache once, Cell 10 applies
+the filter.
 """
 
 # %% Cell 0: imports and settings
