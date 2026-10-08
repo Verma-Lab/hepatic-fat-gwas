@@ -281,3 +281,6 @@ logs/
 saige_pheno_covars.txt
 sample_list.txt
 *sample_list*
+*.pkl
+phenotyping/qc_clipping/attenuation_sd_outlier_check/plausibility_flags.tsv
+
