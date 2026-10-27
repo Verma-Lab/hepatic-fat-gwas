@@ -284,3 +284,17 @@ sample_list.txt
 *.pkl
 phenotyping/qc_clipping/attenuation_sd_outlier_check/plausibility_flags.tsv
 phenotyping/qc_clipping/**/*.tsv
+
+# Oct 2026 phenotype files (participant-level)
+covariates/hepatic_fat_pheno_*.csv
+
+# Oct 2026 SAIGE pipeline outputs (regenerable)
+analyses/hepatic_fat_gwas_oct2026/**/Plots/
+analyses/hepatic_fat_gwas_oct2026/**/Plots_custom/
+analyses/hepatic_fat_gwas_oct2026/**/Summary/
+analyses/hepatic_fat_gwas_oct2026/**/Annotations/
+analyses/hepatic_fat_gwas_oct2026/**/Sumstats/
+analyses/hepatic_fat_gwas_oct2026/**/SAIGE_GWAS_Report.zip
+
+# Aggregate QC tables
+phenotyping/mad_check/*.tsv
