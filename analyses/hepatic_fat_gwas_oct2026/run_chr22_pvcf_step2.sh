@@ -19,6 +19,7 @@ mkdir -p "$OUT/jobs" "$OUT/vcf"
 zcat "$BASE/SL_transformed/PMBB_$ANC/Sumstats/PMBB_$ANC.hepatic_fat.gwas.saige.gz" \
   | awk -F'\t' 'NR>1 && ($2=="22" || $2=="chr22") {print $4}' > "$OUT/pgen_chr22_ids.txt"
 echo "$ANC: $(wc -l < "$OUT/pgen_chr22_ids.txt") chr22 variants from the PGEN run"
+
 echo "model: $RDA"
 
 # One bash job file per chunk (a bare bsub command string runs in a POSIX shell that
@@ -47,7 +48,7 @@ apptainer exec -B /home/,/project/,/static/ $SIF \\
     --vcfFile=$link --vcfFileIndex=$link.csi --vcfField=DS \\
     --chrom=chr22 \\
     --GMMATmodelFile=$RDA --varianceRatioFile=$VR \\
-    --idstoIncludeFile=$OUT/pgen_chr22_ids.txt \\
+    --idstoIncludeFile=$OUT/pgen_chr22_ids.saige_vcf.txt \\
     --SAIGEOutputFile=$OUT/PMBB_$ANC.$chunk.txt \\
     --minMAF=0.01 --minMAC=20 --LOCO=TRUE \\
     --is_imputed_data=FALSE --minInfo=0 --is_output_moreDetails=TRUE \\
