@@ -298,3 +298,9 @@ analyses/hepatic_fat_gwas_oct2026/**/SAIGE_GWAS_Report.zip
 
 # Aggregate QC tables
 phenotyping/mad_check/*.tsv
+
+# Oct 2026 chr22 test runs and is_noadjCov backup (regenerable SAIGE outputs)
+analyses/hepatic_fat_gwas_oct2026/test_chr22_*/
+analyses/hepatic_fat_gwas_oct2026/old_noadjTRUE/
+*.txt.index
+*.vcf.gz.csi
