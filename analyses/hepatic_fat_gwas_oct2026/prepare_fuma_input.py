@@ -13,6 +13,7 @@ GRCh38 -> chr22:44324727 in GRCh37). N is entered on the submission page.
 Run with:
     python3 prepare_fuma_input.py                                  # SL_transformed, EUR + AFR
     python3 prepare_fuma_input.py --run SL_untransformed --ancestry EUR
+    python3 prepare_fuma_input.py --suffix r2_0.7                  # R² ≥ 0.7 files from filter_sumstats_r2.py
 """
 import argparse
 import gzip
@@ -37,7 +38,7 @@ PNPLA3 = ("22", "43928847")      # rs738409, GRCh38; expect effect G / other C, 
 
 
 def sumstats_path(args, ancestry):
-    name = f"PMBB_{ancestry}.hepatic_fat.gwas.saige.gz"
+    name = f"PMBB_{ancestry}.hepatic_fat.gwas.saige{'.' + args.suffix if args.suffix else ''}.gz"
     if args.sumstats_dir:
         return Path(args.sumstats_dir) / name
     return BASE / args.run / f"PMBB_{ancestry}" / "Sumstats" / name
@@ -112,6 +113,8 @@ def main():
     parser.add_argument("--overwrite", action="store_true", help="replace existing output files")
     parser.add_argument("--sumstats-dir", help="read PMBB_<anc>.hepatic_fat.gwas.saige.gz from this folder "
                                                "instead of <run>/PMBB_<anc>/Sumstats/ (e.g. a local copy)")
+    parser.add_argument("--suffix", help="read PMBB_<anc>.hepatic_fat.gwas.saige.<suffix>.gz instead, e.g. r2_0.7 "
+                                         "for the filter_sumstats_r2.py output; also added to the output name")
     args = parser.parse_args()
     ancestries = ["EUR", "AFR"] if args.ancestry == "both" else [args.ancestry]
     outdir = Path(args.outdir)
@@ -121,7 +124,8 @@ def main():
     jobs = []
     for anc in ancestries:
         in_path = sumstats_path(args, anc)
-        out_path = outdir / f"{args.run}_{anc}_fuma_GRCh38.txt.gz"
+        tag = f"{args.run}_{anc}_{args.suffix}" if args.suffix else f"{args.run}_{anc}"
+        out_path = outdir / f"{tag}_fuma_GRCh38.txt.gz"
         if not in_path.exists():
             sys.exit(f"Input not found: {in_path}")
         if out_path.exists() and not args.overwrite:
