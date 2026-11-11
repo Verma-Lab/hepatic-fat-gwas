@@ -304,3 +304,6 @@ analyses/hepatic_fat_gwas_oct2026/test_chr22_*/
 analyses/hepatic_fat_gwas_oct2026/old_noadjTRUE/
 *.txt.index
 *.vcf.gz.csi
+
+# Jan 2026 GWAS sumstats (large, regenerable)
+analyses/hepatic_fat_gwas_jan2026/**/Sumstats/
